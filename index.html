@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaaS Deployment | Assignment 6</title>
+    <style>
+        :root {
+            --primary-color: #232f3e;
+            --accent-color: #ff9900;
+            --bg-color: #f1f4f8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            border-top: 8px solid var(--accent-color);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #e7f6ed;
+            color: #0d8a43;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+
+        /* The Quirky Part Styles */
+        #quirky-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        #cloud-result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--accent-color);
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>AWS Amplify Test</h1>
+        <p>My PaaS Lab - PICT</p>
+        
+        <div class="status-badge">● System Online & Scalable</div>
+
+        <div id="quirky-section">
+            <p>Feeling techy? Find your Cloud Persona:</p>
+            <button onclick="getCloudPersona()">Analyze My Vibe</button>
+            <div id="cloud-result"></div>
+        </div>
+
+        <footer>
+            <br>
+            <small>Built with ☕ and AWS Amplify</small>
+        </footer>
+    </div>
+
+    <script>
+        function getCloudPersona() {
+            const personas = [
+                "☁️ Cumulus: High-level and organized.",
+                "⚡ Stratus: Low latency, high impact.",
+                "🚀 Nimbus: Fast-moving and unpredictable.",
+                "🛡️ Private Cloud: Introverted but highly secure.",
+                "🌈 Hybrid Cloud: Best of both worlds!"
+            ];
+            const random = Math.floor(Math.random() * personas.length);
+            document.getElementById('cloud-result').innerText = personas[random];
+        }
+    </script>
+</body>
+</html>
